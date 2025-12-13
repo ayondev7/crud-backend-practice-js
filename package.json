@@ -1,0 +1,28 @@
+{
+  "name": "crud-practice-backend",
+  "version": "1.0.0",
+  "description": "Backend for CRUD practice with Prisma/PostgreSQL and Mongoose/MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": ["express", "prisma", "mongoose", "crud"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "@prisma/client": "^5.7.0",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0"
+  }
+}
