@@ -4,17 +4,17 @@
  * Defines all routes for Product CRUD operations (MongoDB)
  */
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controller functions
-const {
+import {
   getAllProducts,
   getProductById,
   createProduct,
   updateProduct,
   deleteProduct
-} = require('../../controllers/mongoose/productController');
+} from '../../controllers/mongoose/productController.js';
 
 /**
  * Route: /api/mongoose/products
@@ -34,4 +34,4 @@ router.route('/:id')
   .put(updateProduct)      // PUT /api/mongoose/products/:id - Update product
   .delete(deleteProduct);  // DELETE /api/mongoose/products/:id - Delete product
 
-module.exports = router;
+export default router;

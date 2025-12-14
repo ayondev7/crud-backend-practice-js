@@ -4,17 +4,17 @@
  * Defines all routes for Post CRUD operations (MongoDB)
  */
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controller functions
-const {
+import {
   getAllPosts,
   getPostById,
   createPost,
   updatePost,
   deletePost
-} = require('../../controllers/mongoose/postController');
+} from '../../controllers/mongoose/postController.js';
 
 /**
  * Route: /api/mongoose/posts
@@ -33,4 +33,4 @@ router.route('/:id')
   .put(updatePost)      // PUT /api/mongoose/posts/:id - Update post
   .delete(deletePost);  // DELETE /api/mongoose/posts/:id - Delete post
 
-module.exports = router;
+export default router;

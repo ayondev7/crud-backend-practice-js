@@ -4,17 +4,17 @@
  * Defines all routes for User CRUD operations (PostgreSQL)
  */
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controller functions
-const {
+import {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
   deleteUser
-} = require('../../controllers/prisma/userController');
+} from '../../controllers/prisma/userController.js';
 
 /**
  * Route: /api/prisma/users
@@ -33,4 +33,4 @@ router.route('/:id')
   .put(updateUser)      // PUT /api/prisma/users/:id - Update user
   .delete(deleteUser);  // DELETE /api/prisma/users/:id - Delete user
 
-module.exports = router;
+export default router;

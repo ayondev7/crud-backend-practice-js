@@ -4,15 +4,14 @@
  * Handles all CRUD operations for Products using Prisma (PostgreSQL)
  */
 
-const { response } = require('../../app');
-const { prisma } = require('../../config/prisma');
+import { prisma } from '../../config/prisma.js';
 
 /**
  * @desc    Get all products
  * @route   GET /api/prisma/products
  * @access  Public
  */
-exports.getAllProducts = async (req, res, next) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     // Extract query parameters for filtering
     const { category, minPrice, maxPrice } = req.query;
@@ -49,7 +48,7 @@ exports.getAllProducts = async (req, res, next) => {
  * @route   GET /api/prisma/products/:id
  * @access  Public
  */
-exports.getProductById = async (req, res, next) => {
+export const getProductById = async (req, res, next) => {
   try {
     const { id } = req.params;
     
@@ -112,7 +111,7 @@ exports.getProductById = async (req, res, next) => {
 //   }
 // };
 
-exports.createProduct = async(req,res,next)=> {
+export const createProduct = async(req,res,next)=> {
   try {
     const {name, description, price, stock, category, imageUrl} = req.body;
 
@@ -149,7 +148,7 @@ exports.createProduct = async(req,res,next)=> {
  * @route   PUT /api/prisma/products/:id
  * @access  Public
  */
-exports.updateProduct = async (req, res, next) => {
+export const updateProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, description, price, stock, category, imageUrl } = req.body;
@@ -196,7 +195,7 @@ exports.updateProduct = async (req, res, next) => {
  * @route   DELETE /api/prisma/products/:id
  * @access  Public
  */
-exports.deleteProduct = async (req, res, next) => {
+export const deleteProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
     

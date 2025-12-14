@@ -4,17 +4,17 @@
  * Defines all routes for Product CRUD operations (PostgreSQL)
  */
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controller functions
-const {
+import {
   getAllProducts,
   getProductById,
   createProduct,
   updateProduct,
   deleteProduct
-} = require('../../controllers/prisma/productController');
+} from '../../controllers/prisma/productController.js';
 
 /**
  * Route: /api/prisma/products
@@ -34,4 +34,4 @@ router.route('/:id')
   .put(updateProduct)      // PUT /api/prisma/products/:id - Update product
   .delete(deleteProduct);  // DELETE /api/prisma/products/:id - Delete product
 
-module.exports = router;
+export default router;

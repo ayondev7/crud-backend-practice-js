@@ -4,17 +4,17 @@
  * Defines all routes for User CRUD operations (MongoDB)
  */
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controller functions
-const {
+import {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
   deleteUser
-} = require('../../controllers/mongoose/userController');
+} from '../../controllers/mongoose/userController.js';
 
 /**
  * Route: /api/mongoose/users
@@ -33,4 +33,4 @@ router.route('/:id')
   .put(updateUser)      // PUT /api/mongoose/users/:id - Update user
   .delete(deleteUser);  // DELETE /api/mongoose/users/:id - Delete user
 
-module.exports = router;
+export default router;

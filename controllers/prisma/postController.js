@@ -4,14 +4,14 @@
  * Handles all CRUD operations for Posts using Prisma (PostgreSQL)
  */
 
-const { prisma } = require('../../config/prisma');
+import { prisma } from '../../config/prisma.js';
 
 /**
  * @desc    Get all posts
  * @route   GET /api/prisma/posts
  * @access  Public
  */
-exports.getAllPosts = async (req, res, next) => {
+export const getAllPosts = async (req, res, next) => {
   try {
     // Retrieve all posts from database
     const posts = await prisma.post.findMany({
@@ -38,7 +38,7 @@ exports.getAllPosts = async (req, res, next) => {
  * @route   GET /api/prisma/posts/:id
  * @access  Public
  */
-exports.getPostById = async (req, res, next) => {
+export const getPostById = async (req, res, next) => {
   try {
     const { id } = req.params;
     
@@ -70,7 +70,7 @@ exports.getPostById = async (req, res, next) => {
  * @route   POST /api/prisma/posts
  * @access  Public
  */
-exports.createPost = async (req, res, next) => {
+export const createPost = async (req, res, next) => {
   try {
     const { title, content, published, authorId } = req.body;
     
@@ -122,7 +122,7 @@ exports.createPost = async (req, res, next) => {
  * @route   PUT /api/prisma/posts/:id
  * @access  Public
  */
-exports.updatePost = async (req, res, next) => {
+export const updatePost = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { title, content, published } = req.body;
@@ -169,7 +169,7 @@ exports.updatePost = async (req, res, next) => {
  * @route   DELETE /api/prisma/posts/:id
  * @access  Public
  */
-exports.deletePost = async (req, res, next) => {
+export const deletePost = async (req, res, next) => {
   try {
     const { id } = req.params;
     

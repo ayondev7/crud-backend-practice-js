@@ -112,10 +112,12 @@ app.use('/api/prisma/products', prismaProductRoutes);
 import mongooseUserRoutes from './routes/mongoose/userRoutes.js';
 import mongoosePostRoutes from './routes/mongoose/postRoutes.js';
 import mongooseProductRoutes from './routes/mongoose/productRoutes.js';
+import mongooseTagRoutes from './routes/mongoose/tagRoutes.js';
 
 app.use('/api/mongoose/users', mongooseUserRoutes);
 app.use('/api/mongoose/posts', mongoosePostRoutes);
 app.use('/api/mongoose/products', mongooseProductRoutes);
+app.use('/api/mongoose/tags', mongooseTagRoutes);
 
 // ═══════════════════════════════════════════════════════════════
 // ERROR HANDLING

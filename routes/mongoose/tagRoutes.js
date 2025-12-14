@@ -1,5 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const * as tagControler
+import express from 'express';
+import * as tagController from '../../controllers/mongoose/tagController.js';
 
-router.get('/get-all-tags',)
+const router=express.Router();
+
+router.get('/get-all-tags',tagController.getAllTags);
+
+export default router;
