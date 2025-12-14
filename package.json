@@ -1,6 +1,7 @@
 {
   "name": "crud-practice-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend for CRUD practice with Prisma/PostgreSQL and Mongoose/MongoDB",
   "main": "server.js",
   "scripts": {

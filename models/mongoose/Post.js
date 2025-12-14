@@ -4,7 +4,7 @@
  * Complex Post model with nested comments, reactions, and aggregation-friendly fields
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for Media attachments
 const mediaSchema = new mongoose.Schema({
@@ -364,4 +364,4 @@ postSchema.statics.getTrending = function(limit = 10, days = 7) {
 // Create and export Post model
 const Post = mongoose.model('Post', postSchema);
 
-module.exports = Post;
+export default Post;

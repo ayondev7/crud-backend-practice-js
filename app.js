@@ -8,10 +8,10 @@
  * 4. Error handling
  */
 
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
 
 // Create Express application
 const app = express();
@@ -100,18 +100,18 @@ app.get('/', (req, res) => {
  */
 
 // Prisma (PostgreSQL) Routes
-const prismaUserRoutes = require('./routes/prisma/userRoutes');
-const prismaPostRoutes = require('./routes/prisma/postRoutes');
-const prismaProductRoutes = require('./routes/prisma/productRoutes');
+import prismaUserRoutes from './routes/prisma/userRoutes.js';
+import prismaPostRoutes from './routes/prisma/postRoutes.js';
+import prismaProductRoutes from './routes/prisma/productRoutes.js';
 
 app.use('/api/prisma/users', prismaUserRoutes);
 app.use('/api/prisma/posts', prismaPostRoutes);
 app.use('/api/prisma/products', prismaProductRoutes);
 
 // Mongoose (MongoDB) Routes
-const mongooseUserRoutes = require('./routes/mongoose/userRoutes');
-const mongoosePostRoutes = require('./routes/mongoose/postRoutes');
-const mongooseProductRoutes = require('./routes/mongoose/productRoutes');
+import mongooseUserRoutes from './routes/mongoose/userRoutes.js';
+import mongoosePostRoutes from './routes/mongoose/postRoutes.js';
+import mongooseProductRoutes from './routes/mongoose/productRoutes.js';
 
 app.use('/api/mongoose/users', mongooseUserRoutes);
 app.use('/api/mongoose/posts', mongoosePostRoutes);
@@ -172,4 +172,4 @@ app.use((error, req, res, next) => {
 });
 
 // Export the app for use in server.js
-module.exports = app;
+export default app;

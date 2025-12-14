@@ -4,7 +4,7 @@
  * Complex Review model for products/posts with nested replies, votes, and aggregation-friendly fields
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for Review Media
 const reviewMediaSchema = new mongoose.Schema({
@@ -288,4 +288,4 @@ reviewSchema.statics.getProductRatingStats = function(productId) {
 // Create and export Review model
 const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = Review;
+export default Review;

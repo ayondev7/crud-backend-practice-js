@@ -4,7 +4,7 @@
  * Complex User model with relationships, nested documents, and aggregation-friendly fields
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for Address (embedded document)
 const addressSchema = new mongoose.Schema({
@@ -288,4 +288,4 @@ userSchema.pre('save', function(next) {
 // Create and export User model
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export default User;

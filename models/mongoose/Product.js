@@ -4,7 +4,7 @@
  * Complex Product model with variants, inventory, reviews, and aggregation-friendly fields
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for Product Images
 const productImageSchema = new mongoose.Schema({
@@ -499,4 +499,4 @@ productSchema.statics.findTopRated = function(limit = 10, minReviews = 5) {
 // Create and export Product model
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product;
+export default Product;

@@ -4,7 +4,7 @@
  * Complex Order model for e-commerce with line items, shipping, payments, and aggregation-friendly fields
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for Order Items
 const orderItemSchema = new mongoose.Schema({
@@ -383,4 +383,4 @@ orderSchema.statics.getRevenueByPeriod = function(startDate, endDate) {
 // Create and export Order model
 const Order = mongoose.model('Order', orderSchema);
 
-module.exports = Order;
+export default Order;

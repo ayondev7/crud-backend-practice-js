@@ -4,7 +4,7 @@
  * This file manages the connection to MongoDB via Mongoose
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 /**
  * Connect to MongoDB database
@@ -54,8 +54,4 @@ mongoose.connection.on('disconnected', () => {
   console.log('Mongoose disconnected from MongoDB');
 });
 
-module.exports = {
-  mongoose,
-  connectMongoDB,
-  disconnectMongoDB
-};
+export { mongoose, connectMongoDB, disconnectMongoDB };

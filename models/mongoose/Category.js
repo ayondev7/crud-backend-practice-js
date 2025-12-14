@@ -4,7 +4,7 @@
  * Hierarchical Category model for organizing products and posts with nested structure
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Sub-schema for SEO
 const seoSchema = new mongoose.Schema({
@@ -233,4 +233,4 @@ categorySchema.statics.getDescendants = async function(categoryId) {
 // Create and export Category model
 const Category = mongoose.model('Category', categorySchema);
 
-module.exports = Category;
+export default Category;

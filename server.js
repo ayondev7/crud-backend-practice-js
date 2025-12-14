@@ -9,14 +9,15 @@
  */
 
 // Load environment variables from .env file
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Import the Express app configuration
-const app = require('./app');
+import app from './app.js';
 
 // Import database connections
-const { connectPrisma, disconnectPrisma } = require('./config/prisma');
-const { connectMongoDB, disconnectMongoDB } = require('./config/mongoose');
+import { connectPrisma, disconnectPrisma } from './config/prisma.js';
+import { connectMongoDB, disconnectMongoDB } from './config/mongoose.js';
 
 // Get port from environment or use default
 const PORT = process.env.PORT || 5000;

@@ -4,7 +4,7 @@
  * This file manages the connection to PostgreSQL via Prisma Client
  */
 
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
 
 // Create Prisma Client instance
 // In development, we prevent hot reloading from creating new instances
@@ -47,8 +47,4 @@ async function disconnectPrisma() {
   }
 }
 
-module.exports = {
-  prisma,
-  connectPrisma,
-  disconnectPrisma
-};
+export { prisma, connectPrisma, disconnectPrisma };

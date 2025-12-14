@@ -4,15 +4,15 @@
  * Handles all CRUD operations for Posts using Mongoose (MongoDB)
  */
 
-const Post = require('../../models/mongoose/Post');
-const User = require('../../models/mongoose/User');
+import Post from '../../models/mongoose/Post.js';
+import User from '../../models/mongoose/User.js';
 
 /**
  * @desc    Get all posts
  * @route   GET /api/mongoose/posts
  * @access  Public
  */
-exports.getAllPosts = async (req, res, next) => {
+export const getAllPosts = async (req, res, next) => {
   try {
     // Retrieve all posts from database
     const posts = await Post.find()
@@ -34,7 +34,7 @@ exports.getAllPosts = async (req, res, next) => {
  * @route   GET /api/mongoose/posts/:id
  * @access  Public
  */
-exports.getPostById = async (req, res, next) => {
+export const getPostById = async (req, res, next) => {
   try {
     const { id } = req.params;
     
@@ -67,7 +67,7 @@ exports.getPostById = async (req, res, next) => {
  * @route   POST /api/mongoose/posts
  * @access  Public
  */
-exports.createPost = async (req, res, next) => {
+export const createPost = async (req, res, next) => {
   try {
     const { title, content, published, author } = req.body;
     
@@ -122,7 +122,7 @@ exports.createPost = async (req, res, next) => {
  * @route   PUT /api/mongoose/posts/:id
  * @access  Public
  */
-exports.updatePost = async (req, res, next) => {
+export const updatePost = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { title, content, published } = req.body;
@@ -180,7 +180,7 @@ exports.updatePost = async (req, res, next) => {
  * @route   DELETE /api/mongoose/posts/:id
  * @access  Public
  */
-exports.deletePost = async (req, res, next) => {
+export const deletePost = async (req, res, next) => {
   try {
     const { id } = req.params;
     

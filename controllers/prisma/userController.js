@@ -4,14 +4,14 @@
  * Handles all CRUD operations for Users using Prisma (PostgreSQL)
  */
 
-const { prisma } = require('../../config/prisma');
+import { prisma } from '../../config/prisma.js';
 
 /**
  * @desc    Get all users
  * @route   GET /api/prisma/users
  * @access  Public
  */
-exports.getAllUsers = async (req, res, next) => {
+export const getAllUsers = async (req, res, next) => {
   try {
     // Retrieve all users from database
     const users = await prisma.user.findMany({
@@ -40,7 +40,7 @@ exports.getAllUsers = async (req, res, next) => {
  * @route   GET /api/prisma/users/:id
  * @access  Public
  */
-exports.getUserById = async (req, res, next) => {
+export const getUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
     
@@ -75,7 +75,7 @@ exports.getUserById = async (req, res, next) => {
  * @route   POST /api/prisma/users
  * @access  Public
  */
-exports.createUser = async (req, res, next) => {
+export const createUser = async (req, res, next) => {
   try {
     const { email, name, age } = req.body;
     
@@ -119,7 +119,7 @@ exports.createUser = async (req, res, next) => {
  * @route   PUT /api/prisma/users/:id
  * @access  Public
  */
-exports.updateUser = async (req, res, next) => {
+export const updateUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { email, name, age } = req.body;

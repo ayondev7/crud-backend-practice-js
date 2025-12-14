@@ -5,15 +5,15 @@
  * Import all models from this file for easy access
  */
 
-const User = require('./User');
-const Post = require('./Post');
-const Product = require('./Product');
-const Order = require('./Order');
-const Review = require('./Review');
-const Category = require('./Category');
-const Tag = require('./Tag');
+import User from './User.js';
+import Post from './Post.js';
+import Product from './Product.js';
+import Order from './Order.js';
+import Review from './Review.js';
+import Category from './Category.js';
+import Tag from './Tag.js';
 
-module.exports = {
+export {
   User,
   Post,
   Product,

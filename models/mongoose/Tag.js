@@ -4,7 +4,7 @@
  * Tag model for organizing content with usage tracking and aggregation support
  */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define Tag Schema
 const tagSchema = new mongoose.Schema({
@@ -163,4 +163,4 @@ tagSchema.statics.search = function(query) {
 // Create and export Tag model
 const Tag = mongoose.model('Tag', tagSchema);
 
-module.exports = Tag;
+export default Tag;

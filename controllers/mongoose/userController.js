@@ -4,14 +4,14 @@
  * Handles all CRUD operations for Users using Mongoose (MongoDB)
  */
 
-const User = require('../../models/mongoose/User');
+import User from '../../models/mongoose/User.js';
 
 /**
  * @desc    Get all users
  * @route   GET /api/mongoose/users
  * @access  Public
  */
-exports.getAllUsers = async (req, res, next) => {
+export const getAllUsers = async (req, res, next) => {
   try {
     // Retrieve all users from database
     const users = await User.find()
@@ -35,7 +35,7 @@ exports.getAllUsers = async (req, res, next) => {
  * @route   GET /api/mongoose/users/:id
  * @access  Public
  */
-exports.getUserById = async (req, res, next) => {
+export const getUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
     
@@ -72,7 +72,7 @@ exports.getUserById = async (req, res, next) => {
  * @route   POST /api/mongoose/users
  * @access  Public
  */
-exports.createUser = async (req, res, next) => {
+export const createUser = async (req, res, next) => {
   try {
     const { email, name, age } = req.body;
     
@@ -122,7 +122,7 @@ exports.createUser = async (req, res, next) => {
  * @route   PUT /api/mongoose/users/:id
  * @access  Public
  */
-exports.updateUser = async (req, res, next) => {
+export const updateUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { email, name, age } = req.body;
@@ -189,7 +189,7 @@ exports.updateUser = async (req, res, next) => {
  * @route   DELETE /api/mongoose/users/:id
  * @access  Public
  */
-exports.deleteUser = async (req, res, next) => {
+export const deleteUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     
