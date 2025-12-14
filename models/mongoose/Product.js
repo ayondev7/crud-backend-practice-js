@@ -19,7 +19,7 @@ const productImageSchema = new mongoose.Schema({
 
 // Sub-schema for Product Variants (Size, Color, etc.)
 const variantSchema = new mongoose.Schema({
-  sku: { type: String, required: true, unique: true },
+  sku: { type: String, required: true, unique: true, sparse: true },
   name: { type: String, required: true },
   attributes: {
     color: { type: String },
