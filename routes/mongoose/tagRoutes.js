@@ -4,5 +4,6 @@ import * as tagController from '../../controllers/mongoose/tagController.js';
 const router=express.Router();
 
 router.get('/get-all-tags',tagController.getAllTags);
+router.get('/get-single-tag/:id',tagController.getSingleTag);
 
 export default router;
