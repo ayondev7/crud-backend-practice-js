@@ -37,3 +37,26 @@ export const getSingleTag = async (req, res) => {
     })
   }
 };
+
+export const getTagsByType = async (req,res)=> {
+    const {type} = req.query;
+
+    const query = {};
+    if(type){
+        query.type=type;
+    }
+
+    try {
+        const tags = await Tag.find(query);
+        return res.status(200).json({
+            success:true,
+            message:"Fetched tags successfully",
+            data:tags
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        });
+    }
+}
