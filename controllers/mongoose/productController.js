@@ -1,5 +1,6 @@
 import Product from "../../models/mongoose/Product.js";
 
+
 export const getFilteredProducts = async (req, res) => {
   const { minPrice, maxPrice } = req.query;
 
