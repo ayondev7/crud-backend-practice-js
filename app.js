@@ -113,11 +113,13 @@ import mongooseUserRoutes from './routes/mongoose/userRoutes.js';
 import mongoosePostRoutes from './routes/mongoose/postRoutes.js';
 import mongooseProductRoutes from './routes/mongoose/productRoutes.js';
 import mongooseTagRoutes from './routes/mongoose/tagRoutes.js';
+import mongooseOrderRoutes from './routes/mongoose/orderRoutes.js'
 
 app.use('/api/mongoose/users', mongooseUserRoutes);
 app.use('/api/mongoose/posts', mongoosePostRoutes);
 app.use('/api/mongoose/products', mongooseProductRoutes);
 app.use('/api/mongoose/tags', mongooseTagRoutes);
+app.use('/api/mongoose/orders', mongooseOrderRoutes)
 
 // ═══════════════════════════════════════════════════════════════
 // ERROR HANDLING
