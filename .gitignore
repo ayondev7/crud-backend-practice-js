@@ -7,3 +7,5 @@ dist/
 build/
 *.md
 scripts/
+prisma_practice/
+mongoose_practice/
